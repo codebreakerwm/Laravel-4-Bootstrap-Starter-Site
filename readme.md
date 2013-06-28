@@ -2,29 +2,28 @@
 `Version: 1.2.1 Stable` [![ProjectStatus](http://stillmaintained.com/andrew13/Laravel-4-Bootstrap-Starter-Site.png)](http://stillmaintained.com/andrew13/Laravel-4-Bootstrap-Starter-Site)
 [![Build Status](https://api.travis-ci.org/Zizaco/confide.png)](https://travis-ci.org/andrew13/Laravel-4-Bootstrap-Starter-Site)
 
-Laravel 4 Bootstrap Starter Site is a sample application for beginning development with Larvel 4.
+Laravel 4 Bootstrap Starter Site é uma simples aplicação para iniciar o desenvolvimento com Laravel 4.
 
-It began as a fork of [laravel4-starter-kit](https://github.com/brunogaspar/laravel4-starter-kit) taking the starter kit changing the included modules and adding a few as well.
+Ele começou como um fork de [laravel4-starter-kit](https://github.com/brunogaspar/laravel4-starter-kit) aproveitando o starter kit alterando os módulos incluidos e também adicionando alguns. Esse é uma tradução de [laravel-4-bootstrap-starter-site](https://github.com/andrew13/Laravel-4-Bootstrap-Starter-Site).
 
-
-## Features
+## Características
 
 * Twitter Bootstrap 2.3.0
-* Custom Error Pages
-	* 403 for forbidden page accesses
-	* 404 for not found pages
-	* 500 for internal server errors
-* [Confide](#confide) for Authentication and Authorization
-* Back-end
-	* User and Role management
-	* Manage blog posts and comments
-	* WYSIWYG editor for post creation and editing.
-    * DataTables dynamic table sorting and filtering.
+* Páginas Personalizadas de Erro
+	* 403 para página de acessso proibido
+	* 404 para páginas não encontradas
+	* 500 para erros internos no servidor
+* [Confide](#confide) para Autenticação e Autorização
+* Back-end (Área Administrativa)
+	* Gerenciamento de usuário e função
+	* Gerenciar posts e comentários
+	* WYSIWYG editor para criar e editar post.
+    * DataTables tabela dinâmica ordenação e filtragem.
     * Colorbox Lightbox jQuery modal popup.
-* Front-end
-	* User login, registration, forgot password
-	* User account area
-	* Simple Blog functionality
+* Front-end (Site/Blog)
+	* Login de usuário, registro, esqueci a senha
+	* Área da conta do usuário
+	* Funcionalidade simples de Blog
 * Packages included:
 	* [Confide](#confide)
 	* [Entrust](#entrust)
@@ -35,56 +34,57 @@ It began as a fork of [laravel4-starter-kit](https://github.com/brunogaspar/lara
 	* [Generators](#generators)
 
 ## Issues
-See [github issue list](https://github.com/andrew13/Laravel-4-Bootstrap-Starter-Site/issues) for current list.
+Consulte o [github issue list](https://github.com/andrew13/Laravel-4-Bootstrap-Starter-Site/issues) para ver a lista atual.
 
 ## Wiki
 [Roadmap](https://github.com/andrew13/Laravel-4-Bootstrap-Starter-Site/wiki/Roadmap)
 
 -----
 
-##Requirements
+##Requesitos
 
 	PHP >= 5.4.0 (Entrust requires 5.4, this is an increase over Laravel's 5.3.7 requirement)
 	MCrypt PHP Extension
 
-##How to install
-### Step 1: Get the code
-#### Option 1: Git Clone
+##Como instalar
+### Passo 1: Obter o código
+#### Opção 1: Git Clone
 
 	git clone git://github.com/andrew13/Laravel-4-Bootstrap-Starter-Site.git laravel
 
-#### Option 2: Download the repository
+#### Opção 2: Faça o download do repositório
 
     https://github.com/andrew13/Laravel-4-Bootstrap-Starter-Site/archive/master.zip
 
-### Step 2: Use Composer to install dependencies
-#### Option 1: Composer is not installed globally
+### Passo 2: Use Composer para instalar dependências
+#### Opção 1: Composer não está instalado globalmente
 
     cd laravel
 	curl -s http://getcomposer.org/installer | php
 	php composer.phar install --dev
-#### Option 2: Composer is installed globally
+
+#### Opção 2: Composer está instalado globalmente
 
     cd laravel
 	composer install --dev
 
-If you haven't already, you might want to make [composer be installed globally](http://andrewelkins.com/programming/php/setting-up-composer-globally-for-laravel-4/) for future ease of use.
+Se você não tiver, pode querer fazer [composer ser instalado globalmente](http://andrewelkins.com/programming/php/setting-up-composer-globally-for-laravel-4/) para futura facilidade de uso.
 
-Please note the use of the `--dev` flag.
+Por favor, note o uso da flag `--dev`.
 
-Some packages used to preprocess and minify assests are required on the development environment.
+Alguns pacotes usados para pré-processar e minificar os assets são requeridos no ambiente de desenvolvimento.
 
-When you deploy your project on a production environment you will want to upload the ***composer.lock*** file used on the development environment and only run `php composer.phar install` on the production server.
+Quando você implementar seu projeto em um ambiente de produção, você vai querer fazer o upload do arquivo ***composer.lock*** usado no ambiente de desenvolvimento e só executar `php composer.phar ìnstall` no servidor de produção.
 
-This will skip the development packages and ensure the version of the packages installed on the production server match those you developped on.
+Isso vai ìgnorar os pacotes de desenvolvimento e assegurar a versão dos pacotes instalados no servidor de produção coincidem com aqueles que você desenvolveu.
 
-NEVER run `php composer.phar update` on your production server.
+NUNCA executar `php composer.phar update` no seu servidor de produção.
 
-### Step 3: Configure Environments
+### Passo 3: Configuração dos Ambientes
 
-Laravel 4 will load configuration files depending on your environment. Basset will also build collections depending on this environment setting.
+Laravel 4 irá carregar os arquivos de configuração, dependendo do seu ambiente. Basset também irá construir coleções, dependendo da configuração do ambiente.
 
-Open ***bootstrap/start.php*** and edit the following lines to match your settings. You want to be using your machine name in Windows and your hostname in OS X and Linux (type `hostname` in terminal). Using the machine name will allow the `php artisan` command to use the right configuration files as well.
+Abra ***bootstrap/start.php*** e edite as seguintes linhas de acordo com suas configurações. Você quiser utilizar o nome da máquina no Windows e seu hostname no Mac OS X e Linux (tipo `hostname` no terminal). Usando o nome da máquina vai permitir que o comando `php artisan` para usar os arquivos de configuração do direito também.
 
     $env = $app->detectEnvironment(array(
 
@@ -94,9 +94,9 @@ Open ***bootstrap/start.php*** and edit the following lines to match your settin
 
     ));
 
-Now create the folder inside ***app/config*** that corresponds to the environment the code is deployed in. This will most likely be ***local*** when you first start a project.
+Agora crie uma pasta dentro de ***app/config*** que corresponde ao seu ambiente que o código é implementado. Isso provavelmente será ***local*** quando você primeiro inicia um projeto.
 
-You will now be copying the initial configuration file inside this folder before editing it. Let's start with ***app/config/app.php***. So ***app/config/local/app.php*** will probably look something like this, as the rest of the configuration can be left to their defaults from the initial config file:
+Agora vai ser copiar o arquivo de configuração inicial dentro desta pasta antes de editá-lo. Vamos começar com a ***app/config/app.php***. Então ***app/config/local/app.php*** provavelmente será algo parecido com isso, como o resto da configuração pode ser deixado para os padrões do arquivo de configuração inicial:
 
     <?php
 
@@ -109,7 +109,7 @@ You will now be copying the initial configuration file inside this folder before
         'key' => 'YourSecretKey!!!',
 
         'providers' => array(
-        /* Uncomment for use in development */
+        /* Descomentar para usar no desenvolvimento */
             'Way\Generators\GeneratorsServiceProvider', // Generators
             'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider', // IDE Helpers
 
@@ -117,23 +117,22 @@ You will now be copying the initial configuration file inside this folder before
 
     );
 
-### Step 4: Configure Database
+### Step 4: Configuração do banco de dados
 
-Now that you have the environment configured, you need to create a database configuration for it. Copy the file ***app/config/database.php*** in ***app/config/local*** and edit it to match your local database settings. You can remove all the parts that you have not changed as this configuration file will be loaded over the initial one.
+Agora que você tem o ambiente configurado, você precisa criar um configuração de banco de dados para ele. Copie o arquivo ***app/config/database.php*** para ***app/config/local*** e edite para corresponder às suas configutações de baco de dados. Você pode remover todas as partes que não foram alteradas, como este arquivo de configuração será carregado em relação ao incial.
 
-### Step 5: Configure Mailer
+### Passo 5: Configuração de E-mail
 
-In the same fashion, copy the ***app/config/mail.php*** configuration file in ***app/config/local/mail.php***. Now set the `address` and `name` from the `from` array in ***config/mail.php***. Those will be used to send account confirmation and password reset emails to the users.
-If you don't set that registration will fail because it cannot send the confirmation email.
+Do mesmo mode, copie o arquivo de configuração ***app/config/mail.php*** pra ***app/config/local/mail.php***. Agora defina o `address` e `name` de `from` array em ***config/mail.php***. Esses serão usado para enviar e-mails de confirmação de conta e de redefinição para os usuários. Se você não definir que o registro irá falhar porque ele não pode enviar um e-mail de confirmação.
 
-### Step 6: Populate Database
-Run these commands to create and populate Users table:
+### Passo 6: Popular banco de dados
+Rode estes comandos para criar e popular a tabela Users:
 
 	php artisan migrate
 	php artisan db:seed
 
-### Step 7: Set Encryption Key
-***In app/config/app.php***
+### Passo 7: Definir chave de criptografia
+Em ***app/config/app.php***
 
 ```
 /*
@@ -150,23 +149,23 @@ Run these commands to create and populate Users table:
 
 	'key' => 'YourSecretKey!!!',
 
-You can use artisan to do this
+Você pode usar `artisan` para fazer isso
 
     php artisan key:generate
 
-Once you have generated your key, you might want to copy it over to your ***app/config/local/app.php*** local configuration file to have a different encryption key for each environment. A little tip, revert the key back to ***'YourSecretKey!!!'*** in ***app/config/app.php*** once you are done copying it. Now it can be generated again when you move the project to another environment.
+Uma vez que você gerou sua chave, você pode querer copiá-lo para o seu arquivo de configuração local ***app/config/local/app.php***  ter uma chave de criptografia diferente para cada ambiente. Uma pequena dica, reverter a chave de volta para ***'YourSecretKey!'*** em ***app/config/app.php*** uma vez que você copiou. Agora ele pode ser gerado novamente quando você mover o projeto para outro ambiente.
 
-### Step 8: Make sure app/storage is writable by your web server.
+### Passo 8: Certifique-se que app;storage é gravavel pelo servidor.
 
-If permissions are set correctly:
+Se as permissões estão configuradas corretamente:
 
     chmod -R 775 app/storage
 
-Should work, if not try
+Deve funcionar, se não, tentar
 
     chmod -R 777 app/storage
 
-### Step 9: Build Assets
+### Passo 9: Build Assets
 
 If you have setup your environments, basset will know you are in development and will build the assets automatically and will not apply certain filters such as minification or combination to keep the code readable. You will need to make the folder where the assets are built writable:
 
@@ -193,7 +192,7 @@ php artisan basset:build -p admin
 
 This will build the production assets in ***public/assets/compiled*** which will be versioned in git and should be uploaded to your production server.
 
-### Step 10: Start Page
+### Passo 10: Start Page
 
 ### User login with commenting permission
 Navigate to your Laravel 4 website and login at /user/login:
