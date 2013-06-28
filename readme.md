@@ -165,18 +165,19 @@ Deve funcionar, se não, tentar
 
     chmod -R 777 app/storage
 
-### Passo 9: Build Assets
+### Passo 9: Construindo os Assets
 
 If you have setup your environments, basset will know you are in development and will build the assets automatically and will not apply certain filters such as minification or combination to keep the code readable. You will need to make the folder where the assets are built writable:
 
-If permissions are set correctly:
+Se as permissões estão configuradas corretamente:
 
     chmod -R 775 public/assets/compiled
 
-Should work, if not try
+Deve funcionar, se não, tentar
 
     chmod -R 777 public/assets/compiled
 
+Para forçar uma contrução da coleção dev usar:
 To force a build of the dev collection use:
 
 ```
@@ -192,8 +193,9 @@ php artisan basset:build -p admin
 
 This will build the production assets in ***public/assets/compiled*** which will be versioned in git and should be uploaded to your production server.
 
-### Passo 10: Start Page
+### Passo 10: Página Inicial Start Page
 
+### Login de usuário com permissão para comentar
 ### User login with commenting permission
 Navigate to your Laravel 4 website and login at /user/login:
 
