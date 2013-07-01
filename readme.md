@@ -2,9 +2,11 @@
 `Version: 1.2.1 Stable` [![ProjectStatus](http://stillmaintained.com/andrew13/Laravel-4-Bootstrap-Starter-Site.png)](http://stillmaintained.com/andrew13/Laravel-4-Bootstrap-Starter-Site)
 [![Build Status](https://api.travis-ci.org/Zizaco/confide.png)](https://travis-ci.org/andrew13/Laravel-4-Bootstrap-Starter-Site)
 
-Laravel 4 Bootstrap Starter Site é uma simples aplicação para iniciar o desenvolvimento com Laravel 4.
+***Laravel 4 Bootstrap Starter Site*** é uma simples aplicação para iniciar o desenvolvimento com Laravel 4.
 
-Ele começou como um fork de [laravel4-starter-kit](https://github.com/brunogaspar/laravel4-starter-kit) aproveitando o starter kit alterando os módulos incluidos e também adicionando alguns. Esse é uma tradução de [laravel-4-bootstrap-starter-site](https://github.com/andrew13/Laravel-4-Bootstrap-Starter-Site).
+Ele começou como um fork de [laravel4-starter-kit](https://github.com/brunogaspar/laravel4-starter-kit) aproveitando o starter kit alterando os módulos incluidos e também adicionando alguns. 
+
+Original [laravel-4-bootstrap-starter-site](https://github.com/andrew13/Laravel-4-Bootstrap-Starter-Site) em inglês.
 
 ## Características
 
@@ -24,7 +26,7 @@ Ele começou como um fork de [laravel4-starter-kit](https://github.com/brunogasp
 	* Login de usuário, registro, esqueci a senha
 	* Área da conta do usuário
 	* Funcionalidade simples de Blog
-* Packages included:
+* Pacotes incluídos:
 	* [Confide](#confide)
 	* [Entrust](#entrust)
 	* [Ardent](#ardent)
@@ -34,7 +36,7 @@ Ele começou como um fork de [laravel4-starter-kit](https://github.com/brunogasp
 	* [Generators](#generators)
 
 ## Issues
-Consulte o [github issue list](https://github.com/andrew13/Laravel-4-Bootstrap-Starter-Site/issues) para ver a lista atual.
+Consulte a [lista de issues no github](https://github.com/andrew13/Laravel-4-Bootstrap-Starter-Site/issues) para ver a lista atual.
 
 ## Wiki
 [Roadmap](https://github.com/andrew13/Laravel-4-Bootstrap-Starter-Site/wiki/Roadmap)
@@ -56,7 +58,7 @@ Consulte o [github issue list](https://github.com/andrew13/Laravel-4-Bootstrap-S
 
     https://github.com/andrew13/Laravel-4-Bootstrap-Starter-Site/archive/master.zip
 
-### Passo 2: Use Composer para instalar dependências
+### Passo 2: Use o Composer para instalar as dependências
 #### Opção 1: Composer não está instalado globalmente
 
     cd laravel
@@ -68,7 +70,7 @@ Consulte o [github issue list](https://github.com/andrew13/Laravel-4-Bootstrap-S
     cd laravel
 	composer install --dev
 
-Se você não tiver, pode querer fazer [composer ser instalado globalmente](http://andrewelkins.com/programming/php/setting-up-composer-globally-for-laravel-4/) para futura facilidade de uso.
+Se você não tiver, pode querer deixar o [composer ser instalado globalmente](http://andrewelkins.com/programming/php/setting-up-composer-globally-for-laravel-4/) para futura facilidade de uso.
 
 Por favor, note o uso da flag `--dev`.
 
@@ -76,7 +78,7 @@ Alguns pacotes usados para pré-processar e minificar os assets são requeridos 
 
 Quando você implementar seu projeto em um ambiente de produção, você vai querer fazer o upload do arquivo ***composer.lock*** usado no ambiente de desenvolvimento e só executar `php composer.phar ìnstall` no servidor de produção.
 
-Isso vai ìgnorar os pacotes de desenvolvimento e assegurar a versão dos pacotes instalados no servidor de produção coincidem com aqueles que você desenvolveu.
+Isso vai ìgnorar os pacotes de desenvolvimento e assegurar que a versão dos pacotes instalados no servidor de produção coincidem com aqueles que você desenvolveu.
 
 NUNCA executar `php composer.phar update` no seu servidor de produção.
 
@@ -161,65 +163,64 @@ Se as permissões estão configuradas corretamente:
 
     chmod -R 775 app/storage
 
-Deve funcionar, se não, tentar
+Deve funcionar, se não tentar
 
     chmod -R 777 app/storage
 
 ### Passo 9: Construindo os Assets
 
-If you have setup your environments, basset will know you are in development and will build the assets automatically and will not apply certain filters such as minification or combination to keep the code readable. You will need to make the folder where the assets are built writable:
+Se você configurar seus ambientes, Basset irá saber que você está em desenvolvimento e irá construir os assets automaticamente e não irá aplicar determinados filtros, como minificação ou combinaçãço para manter o código legível. Você precisará deixar a pasta dos assets com permissão de escrita.
 
 Se as permissões estão configuradas corretamente:
 
     chmod -R 775 public/assets/compiled
 
-Deve funcionar, se não, tentar
+Deve funcionar, se não tentar
 
     chmod -R 777 public/assets/compiled
 
 Para forçar uma contrução da coleção dev usar:
-To force a build of the dev collection use:
 
 ```
 php artisan basset:build
 ```
 
-The starter site uses two asset collections, ***public*** and ***admin***. While in development, assets will be built in two folders, ***public*** and ***admin***, inside of ***public/assets/compiled***. These are ignored by git as you do not want them on your production server. Once you are ready to push or upload the code to production run:
+O starter site usa duas coleções de assets, ***public*** e ***admin***. Enquando em desenvolvimento, os assets irá estar em duas pastas, ***public*** e ***admin***, dentro de ***public/assets/compiled***. Estes são ignorados pelo git, como você não quer eles em seu servidor de produção. Uma vez que você esteja pronto para enviar seu código para produção, executar:
 
 ```
 php artisan basset:build -p public
 php artisan basset:build -p admin
 ```
 
-This will build the production assets in ***public/assets/compiled*** which will be versioned in git and should be uploaded to your production server.
+Isto irá construir os assets de produção em ***public/assets/compiled*** que serão versionados no git e deve ser enviados para seu servidor de produção.
 
-### Passo 10: Página Inicial Start Page
+### Passo 10: Página Inicial
 
-### Login de usuário com permissão para comentar
-### User login with commenting permission
-Navigate to your Laravel 4 website and login at /user/login:
+### Acesso de usuário com permissão para comentar
+Navegue no seu website Laravel 4 e acesse /user/login:
 
-    username : user
-    password : user
+    nome de usuário : user
+    senha : user
 
-Create a new user at /user/create
 
-### Admin login
-Navigate to /admin
+Criar um novo usuário em /user/create
 
-    username: admin
-    password: admin
+### Acesso de Admin
+Navegue para /admin
+
+    nome de usuário: admin
+    senha: admin
 
 -----
-## Application Structure
+## Estrutura da aplicação
 
-The structure of this starter site is the same as default Laravel 4 with one exception.
-This starter site adds a `library` folder. Which, houses application specific library files.
-The files within library could also be handled within a composer package, but is included here as an example.
+A estrutura desse startes site é o mesmo que o padrão Laravel 4 com uma exceção.
+Este starter site adiciona uma pasta `library`. Que, especifica o local dos arquivos da biblioteca.
+Os arquivos dentro de library também pode ser manipulado dentro do pacote do composer, mas é incluido aqui como um exemplo.
 
-### Development
+### Desenvolvimento
 
-For ease of development you'll want to enable a couple useful packages. This requires editing the `app/config/app.php` file.
+Para facilidade de desenvolvimento, precisará habilitar alguns pacotes úteis. Isto requer a edição do arquivo `app/config/app.php`.
 
 ```
     'providers' => array(
@@ -232,13 +233,13 @@ For ease of development you'll want to enable a couple useful packages. This req
 
     ),
 ```
-Uncomment the Generators and IDE Helpers. Then you'll want to run a composer update with the dev flag.
+Descomente os Generators e IDE Helpers. Depois irá executar o composer para atualizar com a dev flag.
 
 ```
 php composer.phar update
 ```
-This adds the generators and ide helpers.
-To make it build the ide helpers automatically you'll want to modify the post-update-cmd in `composer.json`
+Isso adiciona os generators e ide helpers.
+Para criar os ide helpers automaticamente, precisará modifigcar o post-update-cmd em `composer.json`.
 
 ```
 		"post-update-cmd": [
@@ -247,9 +248,9 @@ To make it build the ide helpers automatically you'll want to modify the post-up
 		]
 ```
 
-### Production Launch
+### Colocando em Produção
 
-By default debugging is enabled. Before you go to production you should disable debugging in `app/config/app.php`
+Por padrão, depuração é habilidato. Antes de ir para produçãço, você deve desabilitar a depuração em `app/config/app.php`
 
 ```
     /*
@@ -266,22 +267,22 @@ By default debugging is enabled. Before you go to production you should disable 
     'debug' => false,
 ```
 
-## Troubleshooting
+## Solução de Problemas
 
-### Styles are not displaying
+### Estilos não estão exibindo
 
-You may need to recompile the assets for basset. This is easy to with one command.
+Você pode precisar recompilar os assets para basset. Isto é fácil com o comando:
 
 ```
 php artisan basset:build
 ```
 
 -----
-## Included Package Information
+## Informações de Pacotes Incluídos
 <a name="confide"></a>
-## Confide Authentication Solution
+## Confide Solução de Autenticação
 
-Used for the user auth and registration. In general for user controllers you'll want to use something like the following:
+Usar para a autenticação e registro de usuário. Em geral, para os controladores de usuário que irá querer usar algo como o seguinte:
 
     <?php
 
@@ -291,12 +292,12 @@ Used for the user auth and registration. In general for user controllers you'll 
 
     }
 
-For full usage see [Zizaco/Confide Documentation](https://github.com/zizaco/confide)
+Para uso completo consulte [Zizaco/Confide Documentação](https://github.com/zizaco/confide)
 
 <a name="entrust"></a>
-## Entrust Role Solution
+## Entrust Solução de Função
 
-Entrust provides a flexible way to add Role-based Permissions to Laravel4.
+Entrust provê uma modo flexivel para adicionar permissão baseado em funções para Laravel4.
 
     <?php
 
@@ -307,21 +308,21 @@ Entrust provides a flexible way to add Role-based Permissions to Laravel4.
 
     }
 
-For full usage see [Zizaco/Entrust Documentation](https://github.com/zizaco/entrust)
+Para uso completo consulte [Zizaco/Entrust Documentação](https://github.com/zizaco/entrust)
 
 <a name="ardent"></a>
-## Ardent - Used for handling repetitive validation tasks.
+## Ardent - Usado para lidar com tarefas repetidas de validação.
 
-Self-validating, secure and smart models for Laravel 4's Eloquent ORM
+Modelos de auto-validação, seguro e inteligente para Eloquent ORM de Laravel 4.
 
-For full usage see [Ardent Documentation](https://github.com/laravelbook/ardent)
+Para uso completo consulte [Ardent Documentação](https://github.com/laravelbook/ardent)
 
 <a name="carbon"></a>
 ## Carbon
 
-A fluent extension to PHPs DateTime class.
+Uma extensão fluente para classe DateTime do PHP.
 
-```php
+
 <?php
 printf("Right now is %s", Carbon::now()->toDateTimeString());
 printf("Right now in Vancouver is %s", Carbon::now('America/Vancouver'));  //implicit __toString()
@@ -336,16 +337,18 @@ $howOldAmI = Carbon::createFromDate(1975, 5, 21)->age;
 $noonTodayLondonTime = Carbon::createFromTime(12, 0, 0, 'Europe/London');
 
 $worldWillEnd = Carbon::createFromDate(2012, 12, 21, 'GMT');
+?>
 ```
 
-For full usage see [Carbon](https://github.com/briannesbitt/Carbon)
+Para uso completo consulte [Carbon](https://github.com/briannesbitt/Carbon)
 
 <a name="basset"></a>
 ## Basset
 
-A Better Asset Management package for Laravel.
+Um pacote melhor de gerenciamento de Asset para Laravel.
 
-Adding assets in the configuration file `config/packages/jasonlewis/basset/config.php`
+Adicionando assets no arquivo de configuração `config/packages/jasonlewis/basset/config.php`
+
 ```php
 'collections' => array(
         'public-css' => function($collection)
@@ -356,30 +359,30 @@ Adding assets in the configuration file `config/packages/jasonlewis/basset/confi
     ),
 ```
 
-Compiling assets
+Compilando assets
 
     $ php artisan basset:build
 
-I would recommend using development collections for development instead of compiling .
+Eu recomendo usar coleções de desenvolvimento para o desenvolvimento em vez de compilar.
 
-For full usage see [Using Basset by Jason Lewis](http://jasonlewis.me/code/basset/4.0)
+Para uso completo consulte [Using Basset by Jason Lewis](http://jasonlewis.me/code/basset/4.0)
 
 <a name="presenter"></a>
 ## Presenter
 
-Simple presenter to wrap and render objects. Think of it of a way to modify an asset for the view layer only.
-Control the presentation in the presentation layer not in the model.
+Simples apresentador para cobrir e renderizar objetos. Pense disso de um modo a alterar um asset somente para a camada de visão.
+Controle a apresentação na camada de apresentação, não no modelo.
 
-The core idea is the relationship between two classes: your model full of data and a presenter which works as a sort of wrapper to help with your views.
-For instance, if you have a `User` object you might have a `UserPresenter` presenter to go with it. To use it all you do is `$userObject = new UserPresenter($userObject);`.
-The `$userObject` will function the same unless a method is called that is a member of the `UserPresenter`. Another way to think of it is that any call that doesn't exist in the `UserPresenter` falls through to the original object.
+A ideia básica é a relacão entre duas classes: seu modelo completo de dados e um aprensetador que trabalha como uma espécie de invólucro para ajudar com suas exibições.
+Por exemplo, se você tiver um objeto `User` você pode ter um aprensentador `UserPresenter` para ir com ele. Para usar, tudo que você tem que fazer é `$userObject = new UserPresenter($userObject);`.
+O `$userObject` funcionará da mesma forma, a menos que que um método chamado é um membro de `UserPresenter`. Outro modo de pensar sobre isso é que qualquer chamada que não exista no `UserPresenter` cai até o objeto original.
 
-For full usage see [Presenter Readme](https://github.com/robclancy/presenter)
+Para uso completo consulte [Presenter Readme](https://github.com/robclancy/presenter)
 
 <a name="generators"></a>
 ## Laravel 4 Generators
 
-Laravel 4 Generators package provides a variety of generators to speed up your development process. These generators include:
+O pacote de geradores do Laravel 4 provê uma variedade de geradores para acelerar o processo de desenvolvimento. Estes geradores incluem:
 
 - `generate:model`
 - `generate:seed`
@@ -391,16 +394,15 @@ Laravel 4 Generators package provides a variety of generators to speed up your d
 - `generate:form`
 - `generate:test`
 
-For full usage see [Laravel 4 Generators Readme](https://github.com/JeffreyWay/Laravel-4-Generators/blob/master/readme.md)
-
+Para uso completo consulte [Laravel 4 Generators Readme](https://github.com/JeffreyWay/Laravel-4-Generators/blob/master/readme.md)
 
 -----
-## License
+## Licença
 
-This is free software distributed under the terms of the MIT license
+Este é um software livre distribuído sob os termos da licença MIT
 
-## Additional information
+## Informações Adicionais
 
-Inspired by and based on [laravel4-starter-kit](https://github.com/brunogaspar/laravel4-starter-kit)
+Inspirado e baseado em [laravel4-starter-kit](https://github.com/brunogaspar/laravel4-starter-kit)
 
-Any questions, feel free to [contact me](http://twitter.com/andrewelkins).
+Qualquer dúvida, fique livre em [contactar-me](http://twitter.com/andrewelkins).
