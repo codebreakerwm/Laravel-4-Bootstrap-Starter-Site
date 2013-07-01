@@ -322,8 +322,7 @@ Para uso completo consulte [Ardent Documentação](https://github.com/laravelboo
 
 Uma extensão fluente para classe DateTime do PHP.
 
-
-<?php
+```php
 printf("Right now is %s", Carbon::now()->toDateTimeString());
 printf("Right now in Vancouver is %s", Carbon::now('America/Vancouver'));  //implicit __toString()
 $tomorrow = Carbon::now()->addDay();
@@ -337,7 +336,7 @@ $howOldAmI = Carbon::createFromDate(1975, 5, 21)->age;
 $noonTodayLondonTime = Carbon::createFromTime(12, 0, 0, 'Europe/London');
 
 $worldWillEnd = Carbon::createFromDate(2012, 12, 21, 'GMT');
-?>
+
 ```
 
 Para uso completo consulte [Carbon](https://github.com/briannesbitt/Carbon)
