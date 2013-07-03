@@ -12,28 +12,28 @@ Original [laravel-4-bootstrap-starter-site](https://github.com/andrew13/Laravel-
 
 * Twitter Bootstrap 2.3.0
 * Páginas Personalizadas de Erro
-	* 403 para página de acessso proibido
-	* 404 para páginas não encontradas
-	* 500 para erros internos no servidor
+    * 403 para página de acessso proibido
+    * 404 para páginas não encontradas
+    * 500 para erros internos no servidor
 * [Confide](#confide) para Autenticação e Autorização
 * Back-end (Área Administrativa)
-	* Gerenciamento de usuário e função
-	* Gerenciar posts e comentários
-	* WYSIWYG editor para criar e editar post.
+    * Gerenciamento de usuário e função
+    * Gerenciar posts e comentários
+    * WYSIWYG editor para criar e editar post.
     * DataTables tabela dinâmica ordenação e filtragem.
     * Colorbox Lightbox jQuery modal popup.
 * Front-end (Site/Blog)
-	* Login de usuário, registro, esqueci a senha
-	* Área da conta do usuário
-	* Funcionalidade simples de Blog
+    * Login de usuário, registro, esqueci a senha
+    * Área da conta do usuário
+    * Funcionalidade simples de Blog
 * Pacotes incluídos:
-	* [Confide](#confide)
-	* [Entrust](#entrust)
-	* [Ardent](#ardent)
-	* [Carbon](#carbon)
-	* [Basset](#basset)
-	* [Presenter](#presenter)
-	* [Generators](#generators)
+    * [Confide](#confide)
+    * [Entrust](#entrust)
+    * [Ardent](#ardent)
+    * [Carbon](#carbon)
+    * [Basset](#basset)
+    * [Presenter](#presenter)
+    * [Generators](#generators)
 
 ## Issues
 Consulte a [lista de issues no github](https://github.com/andrew13/Laravel-4-Bootstrap-Starter-Site/issues) para ver a lista atual.
@@ -45,14 +45,14 @@ Consulte a [lista de issues no github](https://github.com/andrew13/Laravel-4-Boo
 
 ##Requesitos
 
-	PHP >= 5.4.0 (Entrust requires 5.4, this is an increase over Laravel's 5.3.7 requirement)
-	MCrypt PHP Extension
+    PHP >= 5.4.0 (Entrust requires 5.4, this is an increase over Laravel's 5.3.7 requirement)
+    MCrypt PHP Extension
 
 ##Como instalar
 ### Passo 1: Obter o código
 #### Opção 1: Git Clone
 
-	git clone git://github.com/andrew13/Laravel-4-Bootstrap-Starter-Site.git laravel
+    git clone git://github.com/andrew13/Laravel-4-Bootstrap-Starter-Site.git laravel
 
 #### Opção 2: Faça o download do repositório
 
@@ -62,13 +62,13 @@ Consulte a [lista de issues no github](https://github.com/andrew13/Laravel-4-Boo
 #### Opção 1: Composer não está instalado globalmente
 
     cd laravel
-	curl -s http://getcomposer.org/installer | php
-	php composer.phar install --dev
+    curl -s http://getcomposer.org/installer | php
+    php composer.phar install --dev
 
 #### Opção 2: Composer está instalado globalmente
 
     cd laravel
-	composer install --dev
+    composer install --dev
 
 Se você não tiver, pode querer deixar o [composer ser instalado globalmente](http://andrewelkins.com/programming/php/setting-up-composer-globally-for-laravel-4/) para futura facilidade de uso.
 
@@ -130,8 +130,8 @@ Do mesmo mode, copie o arquivo de configuração ***app/config/mail.php*** pra *
 ### Passo 6: Popular banco de dados
 Rode estes comandos para criar e popular a tabela Users:
 
-	php artisan migrate
-	php artisan db:seed
+    php artisan migrate
+    php artisan db:seed
 
 ### Passo 7: Definir chave de criptografia
 Em ***app/config/app.php***
@@ -149,7 +149,7 @@ Em ***app/config/app.php***
 */
 ```
 
-	'key' => 'YourSecretKey!!!',
+    'key' => 'YourSecretKey!!!',
 
 Você pode usar `artisan` para fazer isso
 
@@ -242,10 +242,10 @@ Isso adiciona os generators e ide helpers.
 Para criar os ide helpers automaticamente, precisará modifigcar o post-update-cmd em `composer.json`.
 
 ```
-		"post-update-cmd": [
-			"php artisan ide-helper:generate",
-			"php artisan optimize"
-		]
+        "post-update-cmd": [
+            "php artisan ide-helper:generate",
+            "php artisan optimize"
+        ]
 ```
 
 ### Colocando em Produção
